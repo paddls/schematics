@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "replaceEnvironment": {
+      "type": "boolean",
+      "x-prompt": "Would you like to replace your environment.ts file to include the firebase configuration ?"
+    }
+  }
+}

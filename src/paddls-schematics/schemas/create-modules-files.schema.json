@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "createCoreModule": {
+      "type": "boolean",
+      "x-prompt": "Would you like to create the core.module.ts file ?"
+    },
+    "createSharedModule": {
+      "type": "boolean",
+      "x-prompt": "Would you like to create the shared.module.ts file ?"
+    },
+    "createSystemModule": {
+      "type": "boolean",
+      "x-prompt": "Would you like to create the system.module.ts file ?"
+    }
+  }
+}

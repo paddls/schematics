@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "createModules": {
+      "type": "boolean",
+      "x-prompt": "Would you like to create the @core, @shared and/or @system folders in your module ?"
+    }
+  }
+}

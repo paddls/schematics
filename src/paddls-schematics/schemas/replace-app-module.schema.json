@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "replaceAppModule": {
+      "type": "boolean",
+      "x-prompt": "Would you like to replace your app.module.ts file to include @core, @shared and @system modules ?"
+    },
+    "importFirebase": {
+      "type": "boolean",
+      "x-prompt": "Would you like to replace your app.module.ts file to include firebase ?"
+    },
+    "importHttp": {
+      "type": "boolean",
+      "x-prompt": "Would you like to replace your app.module.ts file to include ngx-http ?"
+    }
+  }
+}
