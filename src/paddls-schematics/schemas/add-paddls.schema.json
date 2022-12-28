@@ -6,31 +6,31 @@
     },
     "ngxRepositoryVersion": {
       "type": "string",
-      "x-prompt": "Which version of ngx-repository ? (if any, the latest version will be installed by default)"
+      "x-prompt": "Which version of ngx-repository ? (if empty, the latest version compatible will be installed by default)"
     },
     "ngxHttpRepositoryVersion": {
       "type": "string",
-      "x-prompt": "Which version of ngx-http-repository ? (if any, the latest version will be installed by default)"
+      "x-prompt": "Which version of ngx-http-repository ? (if empty, the latest version compatible will be installed by default)"
     },
     "ngxFirestoreRepositoryVersion": {
       "type": "string",
-      "x-prompt": "Which version of ngx-firestore-repository ? (if any, the latest version will be installed by default)"
+      "x-prompt": "Which version of ngx-firestore-repository ? (if empty, the latest version compatible will be installed by default)"
     },
     "ngxCommonVersion": {
       "type": "string",
-      "x-prompt": "Which version of ngx-common-version ? (if any, the latest version will be installed by default)"
+      "x-prompt": "Which version of ngx-common-version ? (if empty, the latest version compatible will be installed by default)"
     },
     "ngxSerializerVersion": {
       "type": "string",
-      "x-prompt": "Which version of ngx-serializer ? (if any, the latest version will be installed by default)"
+      "x-prompt": "Which version of ngx-serializer ? (if empty, the latest version compatible will be installed by default)"
     },
     "rxjsCommonVersion": {
       "type": "string",
-      "x-prompt": "Which version of rxjs-common ? (if any, the latest version will be installed by default)"
+      "x-prompt": "Which version of rxjs-common ? (if empty, the latest version compatible will be installed by default)"
     },
     "tsSerializerVersion": {
       "type": "string",
-      "x-prompt": "Which version of ts-serializer ? (if any, the latest version will be installed by default)"
+      "x-prompt": "Which version of ts-serializer ? (if empty, the latest version compatible will be installed by default)"
     }
   }
 }

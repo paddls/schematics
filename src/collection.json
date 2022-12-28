@@ -29,6 +29,10 @@
       "description": "Replace the envionment.ts file with firebase configuration",
       "factory": "./paddls-schematics/replace-environment#replaceEnvironment",
       "schema": "./paddls-schematics/schemas/replace-environment.schema.json"
+    },
+    "v": {
+      "description": "Get the Angular Version",
+      "factory": "./paddls-schematics/angular-version#getAngularVersion"
     }
   }
 }
