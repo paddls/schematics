@@ -13,6 +13,9 @@
   "author": "",
   "license": "MIT",
   "schematics": "./src/collection.json",
+  "ng-add": {
+    "save": false
+  },
   "dependencies": {
     "@angular-devkit/core": "^15.0.2",
     "@angular-devkit/schematics": "^15.0.2",

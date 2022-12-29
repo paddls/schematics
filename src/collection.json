@@ -1,32 +1,32 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "install": {
-      "description": "Do all the tasks",
-      "factory": "./paddls-schematics/complete-install#completeInstall"
-    },
     "ng-add": {
+      "description": "Do all the tasks",
+      "factory": "./paddls-schematics/complete-install#ngAdd"
+    },
+    "add-paddls": {
       "description": "Add paddls dependencies.",
       "factory": "./paddls-schematics/add-paddls#addDependencies",
       "schema": "./paddls-schematics/schemas/add-paddls.schema.json"
     },
-    "ng-modules": {
+    "add-modules": {
       "description": "Add core, shared and system folders.",
       "factory": "./paddls-schematics/add-modules#folderModules",
       "schema": "./paddls-schematics/schemas/add-modules.schema.json"
     },
-    "ng-modules-files": {
+    "add-modules-files": {
       "description": "Add module.ts files.",
       "factory": "./paddls-schematics/create-modules-files#addModulesFiles",
       "schema": "./paddls-schematics/schemas/create-modules-files.schema.json"
     },
-    "ng-replace-app-module-file": {
+    "replace-app-module-file": {
       "description": "Replace the app module file with the imports of paddls libraries",
       "factory": "./paddls-schematics/replace-app-module#replaceAppModuleFile",
       "schema": "./paddls-schematics/schemas/replace-app-module.schema.json"
     },
-    "ng-replace-environment": {
-      "description": "Replace the envionment.ts file with firebase configuration",
+    "replace-environment": {
+      "description": "Replace the environment.ts file with firebase configuration",
       "factory": "./paddls-schematics/replace-environment#replaceEnvironment",
       "schema": "./paddls-schematics/schemas/replace-environment.schema.json"
     },
