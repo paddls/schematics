@@ -22,7 +22,10 @@ export function replaceEnvironment(options: any): Rule {
 
         if (content) {
             const strContent: string = content.toString();
-            const appendIndex: number = strContent.indexOf('{');
+            const envDeclarationIndex: number = strContent.indexOf('export const environment');
+            const envDeclaration: string = strContent.slice(envDeclarationIndex);
+            const envContentIndex: number = envDeclaration.indexOf('{');
+            const envContent: string = envDeclaration.slice(envContentIndex+1);
             const content2Append: string = '\n' +
                 '   firebase: {\n' +
                 '        apiKey: \'TODO\',\n' +
@@ -34,9 +37,10 @@ export function replaceEnvironment(options: any): Rule {
                 '        appId: \'TODO\',\n' +
                 '        measurementId: \'TODO\',\n' +
                 '    },';
-            const updatedContent: string = strContent.slice(0,appendIndex+1) + content2Append + strContent.slice(appendIndex+1);
+
+            const updatedContent: string = strContent.slice(0, envDeclarationIndex) + envDeclaration.slice(0, envContentIndex+1) + content2Append + envContent;
             tree.overwrite('./src/environments/environment.ts', updatedContent);
-            return tree;
+            return tree
         }
 
     }
