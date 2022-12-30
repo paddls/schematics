@@ -10,31 +10,18 @@ import {
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-const dep: string[] = [
-    '@paddls/ngx-repository',
-    '@paddls/ngx-http-repository',
-    '@paddls/ngx-firestore-repository',
-    '@paddls/ngx-common',
-    '@paddls/ngx-serializer',
-    '@paddls/rxjs-common',
-    '@paddls/ts-serializer'
-];
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
 export function addDependencies(options: any): Rule {
     return (tree: Tree, context: SchematicContext) => {
 
-        if (!options.installPaddls) {
-            return tree;
-        }
-
+        const dep: string[] = options.choiceLibraries;
         const angularVersion: number | undefined = getAngularVersion(tree);
         const rxjsVersion: number | undefined = getRxjsVersion(tree);
-
         let dependency: NodeDependency | undefined;
 
-        context.logger.info(`\n Installing all @paddls dependencies :`)
+        context.logger.info(`\n Installing the @paddls dependencies selected`)
         dep.forEach((dependancy: string) => {
             context.logger.info(`${dependancy}`);
 
@@ -46,12 +33,8 @@ export function addDependencies(options: any): Rule {
             output = output.replace(/'/g, '"');
             output = JSON.parse(output);
 
-            if (options.ngxRepositoryVersion && dependancy === '@paddls/ngx-repository') {
+            if (options.ngxRepositoryVersion && (dependancy === '@paddls/ngx-repository' || dependancy === '@paddls/ngx-http-repository' || dependancy === '@paddls/ngx-firestore-repository')) {
                 dependency = createNodeDependence(dependancy, options.ngxRepositoryVersion, NodeDependencyType.Default);
-            } else if (options.ngxHttpRepositoryVersion && dependancy === '@paddls/ngx-http-repository') {
-                dependency = createNodeDependence(dependancy, options.ngxHttpRepositoryVersion, NodeDependencyType.Default);
-            } else if (options.ngxFirestoreRepositoryVersion && dependancy === '@paddls/ngx-firestore-repository') {
-                dependency = createNodeDependence(dependancy, options.ngxFirestoreRepositoryVersion, NodeDependencyType.Default);
             } else if (options.ngxCommonVersion && dependancy === '@paddls/ngx-common') {
                 dependency = createNodeDependence(dependancy, options.ngxCommonVersion, NodeDependencyType.Default);
             } else if (options.ngxSerializerVersion && dependancy === '@paddls/ngx-serializer') {
@@ -98,14 +81,11 @@ export function addDependencies(options: any): Rule {
             else {
                 dependency = createNodeDependence(dependancy, output[output.length - 1], NodeDependencyType.Default);
             }
-
             if (dependency) {
                 addPackageJsonDependency(tree, dependency);
             }
-
         });
         context.addTask(new NodePackageInstallTask());
-
         return tree;
     };
 }
