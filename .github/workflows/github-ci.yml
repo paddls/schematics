@@ -27,8 +27,9 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          CI: true
+
+      - name: Delete useless folders
+        run: rm -rf node_modules .git .github .idea
 
       - name: Archive production artifact
         if: github.ref == 'refs/heads/master'
