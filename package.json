@@ -1,6 +1,6 @@
 {
-  "name": "paddls-schematics",
-  "version": "0.0.0",
+  "name": "@paddls/schematics",
+  "version": "0.0.0-rc.0",
   "description": "Schematics for Paddls libraries",
   "scripts": {
     "build": "tsc -p tsconfig.json",

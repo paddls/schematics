@@ -29,7 +29,7 @@ jobs:
         run: npm run build
 
       - name: Delete useless folders
-        run: rm -rf node_modules .git .github .idea
+        run: rm -rf node_modules .idea .git .github
 
       - name: Archive production artifact
         if: github.ref == 'refs/heads/master'
@@ -63,7 +63,6 @@ jobs:
           tag_message: "v%s"
           commit_pattern: "^release: v(\\S+)"
           publish_args: "--access public"
-          workspace: "."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN_PADDLS }}
