@@ -33,6 +33,41 @@
     "v": {
       "description": "Get the Angular Version",
       "factory": "./paddls-schematics/angular-version#getAngularVersion"
+    },
+    "add-ngx": {
+      "description": "Install the library @paddls/ngx-repository",
+      "factory": "./paddls-schematics/add-paddls#addNgxRepo",
+      "schema": "./paddls-schematics/schemas/version-paddls.json"
+    },
+    "add-ngx-http": {
+      "description": "Install the library @paddls/ngx-http-repository",
+      "factory": "./paddls-schematics/add-paddls#addNgxHttp",
+      "schema": "./paddls-schematics/schemas/version-paddls.json"
+    },
+    "add-ngx-firestore": {
+      "description": "Install the library @paddls/ngx-firestore-repository",
+      "factory": "./paddls-schematics/add-paddls#addNgxFirestore",
+      "schema": "./paddls-schematics/schemas/version-paddls.json"
+    },
+    "add-ngx-common": {
+      "description": "Install the library @paddls/ngx-common",
+      "factory": "./paddls-schematics/add-paddls#addNgxCommon",
+      "schema": "./paddls-schematics/schemas/version-paddls.json"
+    },
+    "add-ngx-serializer": {
+      "description": "Install the library @paddls/ngx-serializer",
+      "factory": "./paddls-schematics/add-paddls#addNgxSerializer",
+      "schema": "./paddls-schematics/schemas/version-paddls.json"
+    },
+    "add-rxjs-common": {
+      "description": "Install the library @paddls/rxjs-common",
+      "factory": "./paddls-schematics/add-paddls#addRxjsCommon",
+      "schema": "./paddls-schematics/schemas/version-paddls.json"
+    },
+    "add-ts-serializer": {
+      "description": "Install the library @paddls/ts-serializer",
+      "factory": "./paddls-schematics/add-paddls#addTsSerializer",
+      "schema": "./paddls-schematics/schemas/version-paddls.json"
     }
   }
 }

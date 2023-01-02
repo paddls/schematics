@@ -7,26 +7,6 @@
         "enum": ["@paddls/ngx-repository", "@paddls/ngx-http-repository", "@paddls/ngx-firestore-repository", "@paddls/ngx-common", "@paddls/ngx-serializer", "@paddls/rxjs-common", "@paddls/ts-serializer"]
       },
       "x-prompt": "Which @paddls dependencies would you like to install?"
-    },
-    "ngxRepositoryVersion": {
-      "type": "string",
-      "x-prompt": "Which version of ngx-repository, ngx-firstore-repository and ngx-http-repository ? (if empty, the latest version compatible will be installed by default)"
-    },
-    "ngxCommonVersion": {
-      "type": "string",
-      "x-prompt": "Which version of ngx-common-version ? (if empty, the latest version compatible will be installed by default)"
-    },
-    "ngxSerializerVersion": {
-      "type": "string",
-      "x-prompt": "Which version of ngx-serializer ? (if empty, the latest version compatible will be installed by default)"
-    },
-    "rxjsCommonVersion": {
-      "type": "string",
-      "x-prompt": "Which version of rxjs-common ? (if empty, the latest version compatible will be installed by default)"
-    },
-    "tsSerializerVersion": {
-      "type": "string",
-      "x-prompt": "Which version of ts-serializer ? (if empty, the latest version compatible will be installed by default)"
     }
   }
 }
