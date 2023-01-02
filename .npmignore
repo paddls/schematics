@@ -1,4 +1,7 @@
 
 # Ignores TypeScript files, but keeps definitions.
-*.ts
+src/paddls-schematics/files/*.ts
 !*.d.ts
+.github
+.idea
+tsconfig.json
