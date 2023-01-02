@@ -1,7 +1,9 @@
 
 # Ignores TypeScript files, but keeps definitions.
-src/paddls-schematics/files/*.ts
+*.ts
 !*.d.ts
+!src/paddls-schematics/files/*.ts
 .github
 .idea
+package-lock.json
 tsconfig.json

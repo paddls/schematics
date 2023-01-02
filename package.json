@@ -1,6 +1,11 @@
 {
   "name": "@paddls/schematics",
-  "version": "0.0.0-rc.1",
+  "version": "0.0.0-rc.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paddls/schematics"
+  },
+  "homepage": "https://github.com/paddls/schematics#readme",
   "description": "Schematics for Paddls libraries",
   "scripts": {
     "build": "tsc -p tsconfig.json",
