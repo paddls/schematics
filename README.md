@@ -1,6 +1,26 @@
 # Schematics
 
----
+[![build](https://github.com/paddls/schematics/actions/workflows/github-ci.yml/badge.svg?branch=master)](https://github.com/paddls/schematics/actions/workflows/github-ci.yml)
+[![npm version](https://badge.fury.io/js/@paddls%2Fschematics.svg)](https://badge.fury.io/js/@paddls%2Fschematics)
+![GitHub](https://img.shields.io/github/license/paddls/schematics)
+![GitHub repo size](https://img.shields.io/github/repo-size/paddls/schematics)
+![GitHub last commit](https://img.shields.io/github/last-commit/paddls/schematics)
+![GitHub issues](https://img.shields.io/github/issues/paddls/schematics)
+![GitHub top language](https://img.shields.io/github/languages/top/paddls/schematics)
+
+
+
+## Summary
+
+* [Informations](#informations)
+* [How to install](#how-to-install)
+* [Get Started](#get-started)
+    * [Installing the @paddls libraries](#installing-the-paddls-libraries)
+    * [Create module folders](#create-modules-folders)
+    * [Create module files](#create-modules-files)
+    * [Replace the environment.ts](#replace-the-environmentts)
+    * [Replace the app.module.ts](#replace-the-appmodulets)
+    * [Execute all tasks](#execute-all-tasks)
 
 ## Informations
 
@@ -9,36 +29,29 @@ in their parent folder 'module'.
 &nbsp;&nbsp;&nbsp;&nbsp;After the folders created, it will also create the module.ts file for each one, thanks to templates (core.module.ts for @core, shared.module.ts for shared, system.module.ts for system).
 
 &nbsp;&nbsp;&nbsp;&nbsp;If you want to import firebase in your project, the configuration of firebase will be in your environment.ts file, and you will have to fill your values instead of the TODO strings.  
-&nbsp;&nbsp;&nbsp;&nbsp;Finally, you could choose to insert in your app.module.ts file the NgxHttpRepositoryModule and NgxFirestoreRepositoryModule depending on if you need firebase or HTTP or both.  
+&nbsp;&nbsp;&nbsp;&nbsp;Finally, you could choose to insert in your app.module.ts file the NgxHttpRepositoryModule and NgxFirestoreRepositoryModule depending on if you need firebase or HTTP or both.
 
 &nbsp;&nbsp;&nbsp;&nbsp;You can choose to run independently each task or can run all in once.
 
-## Summary
-
----
-
-* [How to install](#how-to-install)
-* [Get Started](#get-started)
-    * [Installing the @paddls libraries](#installing-the-paddls-libraries)
-    * [Create module folders](#create-module-folders)
-    * [Create module files](#create-module-files)
-    * [Replace the environment.ts](#replace-the-environmentts)
-    * [Replace the app.module.ts](#replace-the-appmodulets)
-    * [ng add : Execute all schematics](#ng-add--execute-all-schematics)
-
 ## How to Install
 
----
+All you have to do is to install the schematics in your project. You have 2 methods.
 
-All you have to do is to install the schematics in your project
-
+NPM :
 ```
 npm install @paddls/schematics
 ```
 
-## Get Started
+or
 
----
+Angular Cli :
+```
+ng add @paddls/schematics
+```
+
+With the Angular Cli solution, it will execute automatically all the tasks described below
+
+## Get Started
 
 ### Installing the @paddls libraries
 
@@ -49,11 +62,13 @@ ng generate @paddls/schematics:add-paddls
 
 It will ask you which version of the library you want to install, or it will install the latest version compatible depending on your Angular/RXJS version.
 
-| @paddls libraries                                                                                                                                                                                                                                                                      | Description                                      |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
-| [@paddls/ngx-common](https://www.npmjs.com/package/@paddls/ngx-common)                                                                                                                                                                                                                 | Common functions to use in your Angular project  |
-| [@paddls/ngx-firestore-repository](https://www.npmjs.com/package/@paddls/ngx-firestore-repository)  <br/>[@paddls/ngx-http-repository](https://www.npmjs.com/package/@paddls/ngx-http-repository)  <br/>[@paddls/ngx-repository](https://www.npmjs.com/package/@paddls/ngx-repository) | Easily create a strongly typed data access layer |
-| [@paddls/rxjs-common](https://www.npmjs.com/package/@paddls/rxjs-common)                                                                                                                                                                                                               | Helpful operators to use with RXJS               |
+| @paddls libraries                                                                                                                                                                                                                                                                      | Description                                                        |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
+| [@paddls/ngx-common](https://www.npmjs.com/package/@paddls/ngx-common)                                                                                                                                                                                                                 | Common functions to use in your Angular project                    |
+| [@paddls/ngx-firestore-repository](https://www.npmjs.com/package/@paddls/ngx-firestore-repository)  <br/>[@paddls/ngx-http-repository](https://www.npmjs.com/package/@paddls/ngx-http-repository)  <br/>[@paddls/ngx-repository](https://www.npmjs.com/package/@paddls/ngx-repository) | Easily create a strongly typed data access layer                   |
+| [@paddls/rxjs-common](https://www.npmjs.com/package/@paddls/rxjs-common)                                                                                                                                                                                                               | Helpful operators to use with RXJS                                 |
+| [@paddls/ngx-serializer](https://www.npmjs.com/package/@paddls/ngx-serializer)                                                                                                                                                                                                         | Angular Wrapper of ts-serializer                                   |
+| [@paddls/ts-serializer](https://www.npmjs.com/package/@paddls/ts-serializer)                                                                                                                                                                                                           | Serialize/Deserialize JSON into typescript objects with decorators |
 
 Once installed, you could use the paddls libraries in your Angular project.
  
@@ -107,9 +122,16 @@ ng generate @paddls/schematics:replace-app-module-file
 ```
 It will ask you if you want to import the modules necessary for firebase and/or HTTP.
 
-### ng add : Execute all schematics
+### Execute all tasks
 
-To execute all the schematics in one command
+To execute all the tasks, you simply have to run 
+
+```
+ng generate @paddls/schematics:ng-add
+```
+
+or, same as Angular Cli method showed above
+
 ```
 ng add @paddls/schematics
 ```
