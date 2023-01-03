@@ -1,6 +1,6 @@
 {
   "name": "@paddls/schematics",
-  "version": "0.0.0-rc.2",
+  "version": "0.0.0-rc.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/paddls/schematics"
@@ -19,7 +19,7 @@
   "license": "MIT",
   "schematics": "./src/collection.json",
   "ng-add": {
-    "save": false
+    "save": "devDependencies"
   },
   "dependencies": {
     "@angular-devkit/core": "^15.0.2",
